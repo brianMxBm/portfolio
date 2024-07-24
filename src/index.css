@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff; /* Light grey */
+  --line: #F2; /* Medium grey */
+  --fill: #e8e8e3; /* Light beige */
+  --text: #0e0e0c; /* Almost black */
+  --subtext: #666666; /* Medium grey */
+  --duo: #8c8c73; /* Olive green */
+  --secondary-bg: #e6e6e6; /* Very light grey */
+  --highlight: #d9d9d9; /* Light grey */
+  --border: #262626; /* Dark grey */
+  --bg-root: #000000;
+
+  --zero: #ffffff;
+  --one: #8c8c73;
+  --two: #aeae9d;
+  --three: #d1d1c7;
+  --four: #ddddd5;
+  --five: #e8e8e3;
+  --six: #fafaf9;
+  --seven: #0e0e0c;
+  --eight: #262626;
+  --nine: #4d4d4d;
+  --ten: #666666;
+  --eleven: #d9d9d9;
+  --twelve: #e6e6e6;
+  --thirteen: #f2f2f2;
+}
+
+body {
+  height: 100%;
+  background: var(--four);
+}
+
+.transition-transform {
+  transition: transform 1s ease-in-out;
+}
+
+@layer base {
+  /* CabinetGrotesk Fonts */
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Black.woff2")
+      format("woff2");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Black.woff")
+      format("woff");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff2")
+      format("woff2");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Bold.woff")
+      format("woff");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff2")
+      format("woff2");
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.woff")
+      format("woff");
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff2")
+      format("woff2");
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Extralight.woff")
+      format("woff");
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Light.woff2")
+      format("woff2");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Light.woff")
+      format("woff");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff2")
+      format("woff2");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Medium.woff")
+      format("woff");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff2")
+      format("woff2");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Regular.woff")
+      format("woff");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff2")
+      format("woff2");
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("./public/fonts/CabinetGrotesk/CabinetGrotesk-Thin.woff")
+      format("woff");
+    font-weight: 100;
+  }
+
+  /* GeneralSans Fonts */
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Bold.woff2")
+      format("woff2");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Bold.woff") format("woff");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-BoldItalic.woff2")
+      format("woff2");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-BoldItalic.woff")
+      format("woff");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Extralight.woff2")
+      format("woff2");
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Extralight.woff")
+      format("woff");
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-ExtralightItalic.woff2")
+      format("woff2");
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-ExtralightItalic.woff")
+      format("woff");
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Italic.woff2")
+      format("woff2");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Italic.woff")
+      format("woff");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Light.woff2")
+      format("woff2");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Light.woff") format("woff");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-LightItalic.woff2")
+      format("woff2");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-LightItalic.woff")
+      format("woff");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Medium.woff2")
+      format("woff2");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Medium.woff")
+      format("woff");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-MediumItalic.woff2")
+      format("woff2");
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-MediumItalic.woff")
+      format("woff");
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Regular.woff2")
+      format("woff2");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Regular.woff")
+      format("woff");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Semibold.woff2")
+      format("woff2");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-Semibold.woff")
+      format("woff");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-SemiboldItalic.woff2")
+      format("woff2");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GeneralSans";
+    src: url("./public/fonts/GeneralSans/GeneralSans-SemiboldItalic.woff")
+      format("woff");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-Bold.otf")
+      format("opentype");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-BoldItalic.otf")
+      format("opentype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-Book.otf")
+      format("opentype");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-Medium.otf")
+      format("opentype");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-RegularItalic.otf")
+      format("opentype");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "MontrealMono";
+    src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-Thin.otf")
+      format("opentype");
+    font-weight: 100;
+  }
+}
