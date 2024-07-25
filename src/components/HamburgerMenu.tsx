@@ -12,10 +12,10 @@ const Menu = ({ state }) => {
   let menu = useRef(null);
   let revealMenu = useRef(null);
   let revealMenuBG = useRef(null);
-  let line1 = useRef(null);
-  let line2 = useRef(null);
-  let line3 = useRef(null);
-  let info = useRef(null);
+  const line1 = useRef(null);
+  const line2 = useRef(null);
+  const line3 = useRef(null);
+  const info = useRef(null);
 
   useEffect(() => {
     if (state.clicked === false) {
@@ -51,7 +51,7 @@ const Menu = ({ state }) => {
       <div className="relative w-full h-full">
         <div
           ref={(el) => (revealMenuBG = el)}
-          className="absolute inset-0 w-full h-full bg-oliveDrab z--1"
+          className="absolute inset-0 w-full h-full bg-blackPearl z--1"
         ></div>
         <div
           ref={(el) => (revealMenu = el)}

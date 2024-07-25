@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 
+import { FaBars } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Menu from "./HamburgerMenu";
 import { TypeWriter } from "./Typewriter";
+import { colors } from "../utils/style";
+import { useMedia } from "react-use";
 
 export default function Header() {
   const [disabled, setDisabled] = useState(false);
+
   const [menuState, setMenuState] = useState({
     initial: false,
     clicked: null,
     menuName: "Menu",
   });
+
+  const isWide = useMedia("(min-width: 640px)"); //TODO: Abstract this logic someplace else.
 
   // New state for the transition
   const [isVisible, setIsVisible] = useState(false);
@@ -59,35 +65,35 @@ export default function Header() {
   return (
     <>
       <div
-        className={`grid grid-cols-2 items-center h-24 mx-auto px-10 text-white sm:grid-cols-3 px-10 duration-1000   ${
+        className={`grid grid-cols-2 items-center h-24 mx-auto px-16 text-white lg:grid-cols-3 duration-1000   ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         } `}
       >
         <div className="items-center justify-self-start">
           <Link
-            className="text-3xl font-GeneralSans font-bold text-blackPearl"
+            className=" text-3xl font-GeneralSans font-bold text-blackPearl  "
             to="/"
           >
-            Brian Mx
+            {isWide ? `Brian Mx` : `Mx`}
           </Link>
 
-          <div className="hidden sm:block">
+          <div className=" ">
             <span className="uppercase text-md font-Montreal font-normal text-dimGray">
-              BASED IN LOS ANGELES, CA
+              {isWide ? `BASED IN LOS ANGELES, CA` : `LA BASED`}
             </span>
           </div>
         </div>
 
-        <div className="hidden place-self-center sm:flex">
+        <div className="hidden place-self-center lg:flex">
           <TypeWriter
-            prefixText="I Embrace "
+            prefixText="Embrace "
             typedText={["Quality", "Scalability", "Performance", "Aesthetics"]}
           />
         </div>
 
-        <div className="flex justify-self-end">
-          <nav className="col-span-4 flex font-Montreal">
-            <ul className="flex flex-col gap-x-2 uppercase text-md font-normal text-darkGray md:flex-row ">
+        <div className=" justify-self-end ">
+          <nav className="col-span-4  font-Montreal hidden lg:flex">
+            <ul className="flex gap-x-2 uppercase text-md font-normal text-darkGray  ">
               <li className="flex leading-snug">
                 <a
                   onClick={() => handleMenu()}
@@ -123,6 +129,12 @@ export default function Header() {
               </li>
             </ul>
           </nav>
+          <div
+            className="flex text-pearlBlack lg:hidden"
+            onClick={() => handleMenu()}
+          >
+            <FaBars className="h-8 w-8" color={colors.blackPearl} />
+          </div>
         </div>
       </div>
       <Menu state={menuState} />

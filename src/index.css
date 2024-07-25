@@ -39,6 +39,14 @@ body {
   transition: transform 1s ease-in-out;
 }
 
+@layer components {
+  .animate-text-reveal {
+    @apply inline-block;
+    animation: reveal 1s ease;
+    animation-fill-mode: backwards;
+  }
+}
+
 @layer base {
   /* CabinetGrotesk Fonts */
   @font-face {
