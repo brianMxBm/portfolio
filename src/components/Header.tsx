@@ -65,16 +65,16 @@ export default function Header() {
   return (
     <>
       <div
-        className={`grid grid-cols-2 items-center h-24 mx-auto px-16 text-white lg:grid-cols-3 duration-1000   ${
+        className={`relative grid grid-cols-2 items-center h-24 mx-auto px-16 text-white lg:grid-cols-3 duration-1000 backdrop-blur-3xl bg-whisperGray ${
           isVisible ? "translate-y-0" : "-translate-y-full"
-        } `}
+        } z-50 `}
       >
         <div className="items-center justify-self-start">
           <Link
             className=" text-3xl font-GeneralSans font-bold text-blackPearl  "
             to="/"
           >
-            {isWide ? `Brian Mx` : `Mx`}
+            Mx
           </Link>
 
           <div className=" ">
@@ -87,7 +87,14 @@ export default function Header() {
         <div className="hidden place-self-center lg:flex">
           <TypeWriter
             prefixText="Embrace "
-            typedText={["Quality", "Scalability", "Performance", "Aesthetics"]}
+            typedText={[
+              "Quality",
+              "Scalability",
+              "Performance",
+              "Aesthetics",
+              "Adaptability",
+              "Interactivity",
+            ]}
           />
         </div>
 

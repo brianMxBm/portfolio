@@ -47,6 +47,41 @@ body {
   }
 }
 
+.line {
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+  border-bottom: 0px;
+  animation: fall 3s forwards;
+}
+
+.animate-falls {
+  animation-name: falling;
+}
+
+.animate-fall {
+  animation-name: fall;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(100%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes fall {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 20%;
+  }
+}
+
 @layer base {
   /* CabinetGrotesk Fonts */
   @font-face {
