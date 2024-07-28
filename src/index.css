@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #ffffff; /* Light grey */
+  --bg: #ffffff; /* Lig t grey */
   --line: #F2; /* Medium grey */
   --fill: #e8e8e3; /* Light beige */
   --text: #0e0e0c; /* Almost black */
@@ -50,6 +50,7 @@ body {
 .line {
   border: 1px dashed rgba(0, 0, 0, 0.5);
   border-bottom: 0px;
+  border-top: 0px;
   animation: fall 3s forwards;
 }
 
@@ -416,6 +417,12 @@ body {
     font-family: "MontrealMono";
     src: url("./public/fonts/MontrealMono/PPNeueMontrealMono-Thin.otf")
       format("opentype");
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: "Bitxmap";
+    src: url("./public/fonts/Bitxmap/Bitxmap.ttf") format("opentype");
     font-weight: 100;
   }
 }

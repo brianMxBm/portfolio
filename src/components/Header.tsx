@@ -36,11 +36,13 @@ export default function Header() {
       setDisabled(false);
     }, 1000);
   };
+  // document.body.style.overflow = "hidden"; //@SEE: This is not an effective solution. Come back and refactor this
 
   const handleMenu = () => {
     //TODO: Refactor function.
     setIsVisible(false);
     disableMenu();
+
     if (menuState.initial === false) {
       setMenuState({
         initial: null,
@@ -65,9 +67,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={`relative grid grid-cols-2 items-center h-24 mx-auto px-16 text-white lg:grid-cols-3 duration-1000 backdrop-blur-3xl bg-whisperGray ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        } z-50 `}
+        className={`px-6 relative grid grid-cols-2 items-center h-24 mx-auto  text-white lg:grid-cols-3 lg:px-16 duration-1000  bg-transparent  z-50 `}
       >
         <div className="items-center justify-self-start">
           <Link
@@ -137,13 +137,14 @@ export default function Header() {
             </ul>
           </nav>
           <div
-            className="flex text-pearlBlack lg:hidden"
+            className="flex text-pearlBlack lg:hidden z-50"
             onClick={() => handleMenu()}
           >
             <FaBars className="h-8 w-8" color={colors.blackPearl} />
           </div>
         </div>
       </div>
+
       <Menu state={menuState} />
     </>
   );

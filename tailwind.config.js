@@ -6,6 +6,7 @@ export default {
   theme: {
     extend: {
       animation: {
+        marquee: "marquee 25s linear infinite",
         "text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
         "block-reveal": "block-reveal 1.5s ease-in-out ",
       },
@@ -13,6 +14,8 @@ export default {
         "10xl": "9rem",
         "11xl": "10rem",
         "12xl": "11rem",
+        "13xl": "12rem",
+        "14xl": "13rem",
       },
       keyframes: {
         "text-reveal": {
@@ -25,6 +28,10 @@ export default {
             transform: "translate(0, 0)",
             opacity: 1,
           },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
         "block-reveal": {
           "0%": {
@@ -53,6 +60,7 @@ export default {
       GeneralSans: ["GeneralSans"],
       Grotesk: ["CabinetGrotesk"],
       Montreal: ["MontrealMono"],
+      Bitxmap: ["BitxMap"],
     },
   },
   plugins: [],
